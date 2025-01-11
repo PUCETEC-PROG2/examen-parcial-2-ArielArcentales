@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Inicio{% endblock title %}
+{% block content %}
+<h1>Listado de Películas</h1>
+<div class="row">
+    {% for movie in movies %}
+    <h3>{{ movie.title }}</h3>
+    <ul>
+        <p><strong>Género:</strong> {{ movie.genre }}</p>
+        <p><strong>Director:</strong> {{ movie.director_name }}</p>
+        <p><strong>Año:</strong> {{ movie.release_year }}</p>
+        <a href="{% url 'movies:movie' movie.id %}" class="btn btn-primary">Ver detalles</a>
+    </ul>
+</div>
+{% endfor %}
+</div>
+{% endblock content %}
